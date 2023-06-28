@@ -3,11 +3,71 @@
   gap: 10px;
 }
 
+.scroll {
+  overflow-y: scroll !important;
+}
+
+.display-nonee {
+  display: none !important;
+}
+
+.header-min-height {
+  height: 80px !important;
+  background-color: rgba(1, 1, 1, 0.8784313725) !important;
+  margin-bottom: 30px;
+}
+
+.header-max-height {
+  height: 100vh !important;
+  background-color: transparent !important;
+}
+
+.flex-boxsm {
+  display: flex !important;
+  align-items: baseline !important;
+  justify-content: space-between;
+}
+
+.display-block {
+  display: block !important;
+}
+
+.activeNAV {
+  display: block !important;
+  height: 100vh !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.DeactiveNAV {
+  display: flex !important;
+  height: 0 !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+.window991pxNAVBAR {
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: 40px !important;
+}
+
 body {
-  height: 100vh;
   font-family: "Open Sans", sans-seri;
   color: #fff;
-  background: url("/assets/img/bg.jpg") center/cover no-repeat;
+  overflow: hidden;
+  height: 100vh;
+}
+body::before {
+  content: "";
+  position: fixed;
+  background: #040404 url("/assets/img/bg.jpg") top right no-repeat;
+  background-size: cover;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  z-index: -1;
 }
 
 #header {
@@ -54,18 +114,13 @@ body {
   color: #fff;
 }
 #header .navbar ul li a:hover::before {
-  content: "";
   width: 25px;
 }
-#header .navbar ul li a.active {
+#header .navbar ul li a.activex {
   color: #fff;
 }
-#header .navbar ul li a.active::before {
-  content: "";
+#header .navbar ul li a.activex::before {
   width: 25px;
-  position: absolute;
-  bottom: 5px;
-  border-bottom: 2px solid #18d26e;
 }
 #header .social-links {
   display: flex;
@@ -86,6 +141,9 @@ body {
 #header .social-links i:hover {
   background-color: #18d26e;
 }
+#header .x-block {
+  display: none;
+}
 
 #header.header-top .container {
   display: flex;
@@ -93,16 +151,59 @@ body {
   justify-content: space-between;
 }
 
+.about {
+  background-color: rgba(1, 1, 1, 0.8784313725);
+  padding-top: 45px;
+}
+.about .head-content h2 {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0;
+  line-height: 1px;
+  margin: 0 0 20px 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #bcbcbc;
+  font-family: "Poppins", sans-serif;
+}
+.about .head-content h2::after {
+  content: "";
+  display: inline-block;
+  width: 150px;
+  height: 1px;
+  background-color: #18d26e;
+  margin-bottom: 4px;
+  margin-left: 5px;
+}
+.about .head-content .text {
+  font-size: 36px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+.about .myimg {
+  width: 100%;
+  height: auto;
+}
+.about .about-header {
+  color: #18d26e;
+  font-size: 26px;
+  font-weight: 700;
+}
+
 @media (max-width: 991px) {
   body {
     position: relative;
     background-position: right;
   }
+  #header {
+    height: 100vh;
+  }
   #header .container {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100%;
   }
   #header h1 {
     font-size: 36px;
@@ -112,15 +213,46 @@ body {
     font-size: 20px;
   }
   #header .navbar {
-    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(1, 1, 1, 0.8784313725);
+    transition: 0.5s;
+    overflow: hidden;
+    visibility: hidden;
+  }
+  #header .navbar .menu-links {
+    width: 95%;
+    height: 85%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #333333;
+    padding: 20px;
+  }
+  #header .navbar .menu-links .nav-link {
+    margin-bottom: 20px;
+    position: relative;
+  }
+  #header .navbar .menu-links .nav-link:hover {
+    color: #fff;
+  }
+  #header .navbar .menu-links .nav-link::before {
+    content: "";
+    bottom: -5px !important;
   }
   #header .menu-toggle {
     cursor: pointer;
-    position: absolute;
+    position: fixed;
     top: 30px;
     right: 30px;
     font-size: 24px;
     height: min-content;
+    color: #fff;
   }
   #header .menu-toggle li {
     height: 2px;
@@ -129,9 +261,14 @@ body {
     background-color: #fff;
     z-index: -1;
   }
-}
-.menu-toggle.active .navbar {
-  display: flex !important;
+  #header .x-block {
+    position: fixed;
+    top: 28px;
+    right: 32px;
+    font-size: 26px;
+    z-index: 1;
+    cursor: pointer;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
