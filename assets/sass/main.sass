@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap')
 
-@import _js
-
 $color-white: #fff
 $open-famly: 'Open Sans', sans-seri
 $pop-famly: 'Poppins', sans-serif
@@ -11,6 +9,12 @@ $color-green: #18d26e
 $icon-color: #2c2c2c
 $color-Border: #333333
 $bg-color: #010101e0
+$card-bg-color: #151515
+$card-icon-color: rgba(255, 255, 255, 0.1)
+
+@import _js
+@import _swipper
+@import _section
 
 body
     font-family: 'Open Sans', sans-seri
@@ -28,7 +32,6 @@ body
         top: 0
         height: 100vh
         z-index: -1
-
 
 #header
     display: flex
@@ -51,7 +54,6 @@ body
             border-bottom: 2px solid $color-green
             color: $color-white
     .navbar
-
         ul
             display: flex
             align-items: center
@@ -110,32 +112,12 @@ body
         justify-content: space-between
 
 .about
-    background-color: $bg-color
-    padding-top:  45px
-    .head-content
-        h2
-            font-size: 14px
-            font-weight: 500
-            padding: 0
-            line-height: 1px
-            margin: 0 0 20px 0
-            letter-spacing: 2px
-            text-transform: uppercase
-            color: $color-gray
-            font-family: $pop-famly
+    padding-bottom: 0 !important
+    z-index: -1
+    .container
+        background-color: $bg-color
+        padding: 30px
 
-            &::after
-                content: ""
-                display: inline-block
-                width: 150px
-                height: 1px
-                background-color: $color-green
-                margin-bottom: 4px
-                margin-left: 5px
-        .text
-            font-size: 36px
-            font-family: $pop-famly
-            font-weight: 700
     .myimg
         width: 100%
         height: auto
@@ -144,6 +126,147 @@ body
         color: $color-green
         font-size: 26px
         font-weight: 700
+    ul
+        li
+            margin-bottom: 14px
+            i
+                font-size: 14px
+                color: $color-green !important
+                margin-right: 10px
+            b
+                margin-right: 10px
+
+    .cards
+        margin-top: 60px !important
+
+    .count-box
+        position: relative
+        background-color: $card-bg-color
+        padding: 30px 30px 25px 30px
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+
+        span
+            font-size: 36px
+            display: block
+            font-weight: 600
+            color: #fff
+
+        p
+            font-family: $rale-famly
+            font-size: 14px
+
+        i
+            position: absolute
+            top: -20px
+            left: 50%
+            transform: translate(-50%)
+            font-size: 25px
+            color: $color-green
+            padding: 12px
+            border-radius: 50%
+            background: $card-icon-color
+
+    .progressm
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        align-items: center
+        font-size: 13px
+        font-weight: 700
+
+        .skill
+            display: flex
+            justify-content: space-between
+            align-items: center
+            width: 100%
+
+    .progress-bar-wrapper
+        width: 100%
+        background: #343434
+
+        .progress-bar
+            width: 0%
+            height: 10px
+            transition: 1s
+            background-color: $color-green
+
+    .interest
+        margin-top: 60px
+        .icon-box
+            display: flex
+            align-items: center
+            padding: 20px
+            background: $card-bg-color
+            transition: ease-in-out 0.3s
+            height: 72px
+            margin-bottom: 20px
+
+            &:hover
+                background-color: #1f1f1f
+
+            h3
+                font-weight: 700
+                font-size: 16px
+                color: $color-white
+                line-height: 1
+
+            i
+                color: #ffbb2c
+                margin-right: 10px
+                font-size: 24px
+
+    .testimonials
+        .testimonial-item
+            position: relative
+            p
+                font-style: italic
+                margin: 0 15px 0 15px
+                padding: 20px 20px 60px 20px
+                background: rgba(255, 255, 255, 0.1)
+                position: relative
+                border-radius: 6px
+                position: relative
+                z-index: 1
+
+                i
+                    position: relative
+                    font-size: 13px
+                    top: -8px
+                    color: #545454
+
+                .fa-quote-right
+                    top: 8px !important
+
+        .user-profile
+            position: absolute
+            left: 50px
+            bottom: -80px
+            z-index: 1
+
+            img
+                height: 80px
+                width: 80px
+                border-radius: 100%
+                border: 6px solid rgba(255, 255, 255, 0.12)
+                margin-bottom: 5px
+
+            h4
+                text-align: left !important
+                font-size: 14px
+                color: #999
+
+            h3
+                font-size: 18px
+                font-weight: bold
+
+.resume
+    .container
+        background-color: $bg-color
+        padding: 30px
 
 @media (max-width: 991px)
     body
@@ -151,7 +274,8 @@ body
         background-position: right
 
     #header
-        height: 100vh 
+        // position: relative
+        height: 100vh
         .container
             display: flex !important
             flex-direction: column
@@ -176,6 +300,7 @@ body
             transition: 0.5s
             overflow: hidden
             visibility: hidden
+            // z-index: 999 !important
 
             .menu-links
                 width: 95%
@@ -187,6 +312,7 @@ body
                 transform: translate(-50%,-50%)
                 border: 1px solid $color-Border
                 padding: 20px
+                // z-index: 999 !important
 
                 .nav-link
                     margin-bottom: 20px
@@ -201,7 +327,7 @@ body
 
         .menu-toggle
             cursor: pointer
-            position: fixed
+            position: absolute
             top: 30px
             right: 30px
             font-size: 24px

@@ -52,6 +52,7 @@ function centerToTop() {
 function notEqualToHOME() {
     container.classList.add("flex-boxsm");
     container.classList.remove("display-block");
+    body.classList.add("scroll");
 
     header.classList.add("header-top");
 
@@ -78,7 +79,6 @@ function ChechkMobileSizeForDeletedItem(e) {
             body.classList.add("scroll");
             deletedItemDn();
             addHeightHEADER();
-            headTEXT.classList.remove("head-text");
 
         } else {
             body.classList.remove("scroll");

@@ -1,0 +1,39 @@
+section
+    overflow: hidden
+    position: absolute
+    width: 100%
+    top: 140px
+    bottom: 100%
+    opacity: 0
+    transition: ease-in-out 0.4s
+
+.section-active-show
+    top: 100px
+    bottom: auto
+    opacity: 1
+    padding-bottom: 45px
+    z-index: -1
+
+.head-content
+    h2
+        font-size: 14px
+        font-weight: 500
+        padding: 0
+        line-height: 1px
+        margin: 0 0 20px 0
+        letter-spacing: 2px
+        text-transform: uppercase
+        color: $color-gray
+        font-family: $pop-famly
+
+        &::after
+            content: ""
+            width: 120px
+            height: 1px
+            display: inline-block
+            background: #4ceb95
+            margin: 4px 10px
+        .text
+            font-size: 36px
+            font-family: $pop-famly
+            font-weight: 700
