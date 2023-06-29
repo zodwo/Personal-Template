@@ -40,6 +40,7 @@ function showDeletedItem() {
 function centerToTop() {
     menuItem.forEach((element) => {
         element.addEventListener("click", (e) => {
+            e.preventDefault();
             if (e.target.textContent != "Home") {
                 notEqualToHOME();
             } else {
@@ -79,7 +80,6 @@ function ChechkMobileSizeForDeletedItem(e) {
             body.classList.add("scroll");
             deletedItemDn();
             addHeightHEADER();
-
         } else {
             body.classList.remove("scroll");
             showDeletedItem();
@@ -95,6 +95,8 @@ function ChechkMobileSizeForDeletedItem(e) {
 
 menuItem.forEach((items) => {
     items.addEventListener("click", (it) => {
+        it.preventDefault();
+
         if (windowWIDTH < 991) {
             ChechkMobileSizeForDeletedItem(it.target.textContent);
             console.log(it.target.textContent);

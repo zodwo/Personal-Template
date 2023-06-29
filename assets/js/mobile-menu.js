@@ -11,7 +11,7 @@ CheckSize2();
 function CheckSize2() {
     //
     if (window.innerWidth < 991) {
-        navbar.classList.remove("window991pxNAVBAR")
+        navbar.classList.remove("window991pxNAVBAR");
         header.classList.remove("header-top");
 
         // showDeletedItem();
@@ -20,16 +20,15 @@ function CheckSize2() {
             CheckIsActive();
         });
 
-
         function CheckIsActive() {
             if (menuIcons.classList.contains("active")) {
-                navbar.classList.remove("DeactiveNAV")
-                navbar.classList.add("activeNAV")
+                navbar.classList.remove("DeactiveNAV");
+                navbar.classList.add("activeNAV");
                 closeMenuIcons.style.display = "block";
                 // console.log("object1");
-            } else if(!menuIcons.classList.contains("active")){
-                navbar.classList.remove("activeNAV")
-                navbar.classList.add("DeactiveNAV")
+            } else if (!menuIcons.classList.contains("active")) {
+                navbar.classList.remove("activeNAV");
+                navbar.classList.add("DeactiveNAV");
                 closeMenuIcons.style.display = "none";
                 header.style.height = "100vh";
                 // console.log("object2");
@@ -45,7 +44,7 @@ function CheckSize2() {
         // Call function
         CheckIsActive();
     } else {
-        navbar.classList.add("window991pxNAVBAR")
+        navbar.classList.add("window991pxNAVBAR");
         menuIcons.classList.remove("active");
         closeMenuIcons.style.display = "none";
     }
@@ -55,7 +54,8 @@ function CheckSize2() {
 const navLink = document.querySelectorAll(".nav-link");
 
 navLink.forEach((a) => {
-    a.addEventListener("click", () => {
+    a.addEventListener("click", (e) => {
+        e.preventDefault();
         if (!a.classList.contains("activex")) {
             navLink.forEach((active) => {
                 active.classList.remove("activex");
@@ -67,7 +67,8 @@ navLink.forEach((a) => {
 });
 
 //*************************************** */
-navbar.addEventListener("click", () => {
+navbar.addEventListener("click", (e) => {
+    e.preventDefault();
     menuIcons.classList.remove("active");
     CheckSize2();
 });

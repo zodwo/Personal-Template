@@ -16,3 +16,9 @@ function Test(e) {
         }
     });
 }
+
+const contactBTN = document.querySelector('.contact-btn')
+
+contactBTN.addEventListener("click",(e)=>{
+    e.preventDefault()
+})
