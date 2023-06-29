@@ -4,6 +4,13 @@ const Valuex = document.querySelectorAll(".val");
 
 const about = document.querySelector("#about");
 
+function checkAbout() {
+    if (about.classList.contains("section-active-show")) {
+        Animation();
+        console.log("YES");
+    }
+}
+
 function Animation() {
     const topScroll = about.getBoundingClientRect().top;
     if (windowWIDTH < 991) {
@@ -33,6 +40,8 @@ function setWIDTH(x, e) {
 }
 
 window.addEventListener("scroll", () => {
-    Animation();
+    // Animation();
+    checkAbout();
 });
-Animation();
+// Animation();
+checkAbout();

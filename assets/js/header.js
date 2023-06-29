@@ -95,6 +95,7 @@ function ChechkMobileSizeForDeletedItem(e) {
 
 menuItem.forEach((items) => {
     items.addEventListener("click", (it) => {
+        checkAbout();
         it.preventDefault();
 
         if (windowWIDTH < 991) {
