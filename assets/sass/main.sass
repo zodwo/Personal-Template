@@ -39,10 +39,13 @@ body
     height: 100%
     color: $color-white
     transition: 0.4s
+    z-index: 9999
 
     h1
-        font-size: 3rem
-        font-weight: 700
+        a
+            font-size: 3rem
+            font-weight: 700
+            color: $color-white
 
     h2
         font-size: 24px
@@ -113,7 +116,7 @@ body
 
 .about
     padding-bottom: 0 !important
-    z-index: -1
+
     .container
         background-color: $bg-color
         padding: 30px
@@ -126,6 +129,7 @@ body
         color: $color-green
         font-size: 26px
         font-weight: 700
+
     ul
         li
             margin-bottom: 14px
@@ -264,9 +268,134 @@ body
                 font-weight: bold
 
 .resume
+    position: relative
     .container
         background-color: $bg-color
         padding: 30px
+
+    .resume-title
+        text-transform: capitalize
+        font-size: 26px
+        font-weight: 700
+        margin-top: 20px
+        margin-bottom: 20px
+
+    .resume-item
+        position: relative
+        border-left: 2px solid rgba(255, 255, 255, 0.2)
+        padding: 0 0 20px 20px
+
+        h3
+            font-size: 18px
+            font-weight: 600
+            text-transform: uppercase
+            font-family: $pop-famly
+            color: $color-green
+            margin-bottom: 10px
+
+            &::before
+                content: ""
+                position: absolute
+                top: 0
+                left: -9px
+                display: block
+                width: 16px
+                height: 16px
+                border-radius: 50px
+                background: $color-green
+                border: 2px solid $color-green
+
+    p
+        margin: 10px 0
+
+    ul
+        padding-left: 20px
+        li
+            list-style-type: disc
+            margin-bottom: 10px
+
+    .years
+        color: $color-white !important
+        font-size: 16px
+        background: rgba(255, 255, 255, 0.15)
+        padding: 5px 15px
+        display: inline-block
+        font-weight: 600
+        margin-bottom: 10px
+        font-family: $rale-famly !important
+
+.services
+    .container
+        background-color: $bg-color
+        padding: 30px
+
+    .icon-box
+        margin-top: 20px
+        background: rgba(204, 204, 204, 0.1)
+        padding: 80px 20px
+        transition: all ease-in-out 0.3s
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        gap: 10px
+        text-align: center
+        border-radius: 1px
+
+        .icon
+            position: relative
+            height: 60px
+            width: 60px
+            border-radius: 5px
+            background: rgba(255, 255, 255, 0.15)
+
+            i
+                position: absolute
+                top: 8px
+                left: 8px
+                color: $color-white
+                font-size: 25px
+                height: 60px
+                width: 60px
+                border-radius: 5px
+                background: $color-green
+                display: flex
+                align-items: center
+                justify-content: center
+                transition: 0.5s
+
+        h4
+            margin-top: 20px
+            font-weight: 700
+            margin-bottom: 15px
+            font-size: 24px
+            a
+                color: $color-white
+
+        p
+            line-height: 24px
+            font-size: 14px
+            margin-bottom: 0
+
+    .icon-box:hover
+        background: $color-green
+
+        .icon
+            i
+                background: $color-white
+                color: $color-green
+
+//        // 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
 
 @media (max-width: 991px)
     body
@@ -275,17 +404,19 @@ body
 
     #header
         // position: relative
+        z-index: 999999 !important
         height: 100vh
         .container
             display: flex !important
             flex-direction: column
-            align-items: center
+            align-items: baseline !important
             justify-content: center
             height: 100%
 
         h1
-            font-size: 36px
-            font-family: $pop-famly
+            a
+                font-size: 36px
+                font-family: $pop-famly
 
         h2
             font-size: 20px
